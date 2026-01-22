@@ -1,0 +1,33 @@
+name: Deploy Static Site to Apache (DigitalOcean)
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Add SSH key
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Add server to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to server
+        env:
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_IP: ${{ secrets.SERVER_IP }}
+          APP_DIR: ${{ secrets.APP_DIR }}
+        run: |
+          ssh "$SERVER_USER@$SERVER_IP" << 'EOF'
+            set -e
+            cd "$APP_DIR"
+            git pull origin main
+            rsync -a --delete ./ /var/www/aryan135.site/public_html/ --exclude .git
+          EOF
