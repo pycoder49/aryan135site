@@ -64,8 +64,8 @@ To change the http server response hader from the default Apache one to a custom
 5. **ssl-verify.jpg**
 ![alt text](images/SSL-verify.jpg)
 
-6. **GitHub deployment process: mp4 format**
-<video controls src="images/Github-Deploy.mp4" title="Title"></video>
+6. **GitHub deployment process: gif format**
+![alt text](images/Github-Deploy.gif)
 
 7. **php-verification.jpg**
 ![alt text](images/php-verification.jpg)
