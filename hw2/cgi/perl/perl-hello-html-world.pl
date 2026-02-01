@@ -6,12 +6,12 @@ print "Content-Type: text/html\n\n";
 print "<!DOCTYPE html>";
 print "<html>";
 print "<head>";
-print "<title>Hello CGI World</title>";
+print "<title>Hello Aryan's CGI World</title>";
 print "</head>";
 print "<body>";
 
-print "<h1 align=center>Hello HTML World</h1><hr/>";
-print "<p>Hello World</p>";
+print "<h1 align=center>Hello Aryan's Perl HTML World</h1><hr/>";
+print "<p>Hello Team Aryan :D</p>";
 print "<p>This page was generated with the Perl programming langauge</p>";
 
 $date = localtime();
