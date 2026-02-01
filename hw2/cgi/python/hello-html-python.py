@@ -7,7 +7,7 @@ print("Content-Type: text/html\n")
 
 ip = os.environ.get("REMOTE_ADDR", "Unknown IP")
 
-print("""
+print(f"""
 <!DOCTYPE html>
 <html>
         <head>
