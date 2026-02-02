@@ -2,13 +2,11 @@ use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 fn json_escape(s: &str) -> String{
-    let escaped = s
-        .replace('\\', "\\\\")
-        .replace('"', "\\\"")
-        .replace('\n', "\\n")
-        .replace('\r', "\\r")
-        .replace('\t', "\\t");
-    print!("{}", escaped);
+    s.replace('\\', "\\\\")
+     .replace('"', "\\\"")
+     .replace('\n', "\\n")
+     .replace('\r', "\\r")
+     .replace('\t', "\\t")
 }
 
 fn main(){
