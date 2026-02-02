@@ -39,7 +39,7 @@ static string url_decode(const string &s){
 
 static map<string, string> parse_form_encoded(const string &body){
     map<string, string> params;
-    size_t = start = 0;
+    size_t start = 0;
     while(start <= body.size()){
         size_t x = body.find('&', start);
         if(x == string::npos){
@@ -107,7 +107,7 @@ int main(){
     }
     else {
         string body = read_stdin_body();
-        if(ctype.find("application/json") != string::npos){
+        if(content_type.find("application/json") != string::npos){
             params = parse_json_object(body);
         }
         else{
