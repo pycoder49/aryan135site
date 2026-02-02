@@ -2,7 +2,7 @@ use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main(){
-    let ip = env::var("REMOTE_ADDR").unwrap_or(|_| "unknown".to_string());
+    let ip = env::var("REMOTE_ADDR").unwrap_or("unknown".to_string());
     let now = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_secs();
 
     print!("Cache-Control: no-cache\r\n");
