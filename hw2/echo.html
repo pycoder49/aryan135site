@@ -15,7 +15,7 @@
                 var encoding = document.getElementById("encoding").value;
 
                 var extension = (language === "cpp" || language === "rust") ? ".cgi" : ".py";
-                var endpoint = "/cgi/" + language + "/echo-" + language + extension;
+                var endpoint = "/hw2/cgi/" + language + "/echo-" + language + extension;
                 
                 this.action = endpoint;
 
@@ -59,7 +59,7 @@
 <body>
     <h1>Echo Page</h1>
 
-    <form id="echoForm" method="GET" action="/cgi/python/echo-python.py">
+    <form id="echoForm" method="GET" action="/hw2/cgi/python/echo-python.py">
         <!-- Selecting desired language (Python, Rust, C++)-->
         <label for="language">Choose a language:</label>
         <select id="language" name="language">
