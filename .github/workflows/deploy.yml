@@ -36,5 +36,8 @@ jobs:
             cd /var/www/aryan135.site/public_html/hw2/cgi/rust
             sudo chmod +x build.sh
             sudo bash build.sh
+            cd /var/www/aryan135.site/public_html/hw2/cgi/cpp
+            sudo chmod +x build.sh
+            sudo bash build.sh
 
           EOF
