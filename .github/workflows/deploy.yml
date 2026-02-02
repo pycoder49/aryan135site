@@ -34,6 +34,6 @@ jobs:
             rsync -a --delete ./ /var/www/aryan135.site/public_html/ --exclude .git
             sudo find /var/www/aryan135.site/public_html/hw2/cgi -type f \( -name "*.pl" -o -name "*.py" -o -name "*.cgi" \) -exec chmod 755 {} \;
             cd /var/www/aryan135.site/public_html/hw2/cgi/rust
-            ./build.sh
+            sudo ./build.sh
 
           EOF
