@@ -59,12 +59,12 @@ fn parse_form_urlencoded(s: &str) -> HashMap<String, String>{
 fn parse_cookie(s: &str) -> HashMap<String, String>{
     let mut hash_map = HashMap::new();
     for pair in s.split(';'){
-        let part = part.trim();
-        if part.is_empty(){
+        let pair = pair.trim();
+        if pair.is_empty(){
             continue;
         }
 
-        let mut split = part.splitn(2, '=');
+        let mut split = pair.splitn(2, '=');
         let key = split.next().unwrap_or("").trim();
         let value = split.next().unwrap_or("").trim();
         if !key.is_empty(){
@@ -129,12 +129,12 @@ fn main(){
     if method == "POST"{
         let mut body = String::new();
         if let Ok(content_length) = env::var("CONTENT_LENGTH").unwrap_or("0".to_string()).parse::<usize>(){
-            if len > 0{
+            if content_length > 0{
                 io::stdin().read_to_string(&mut body).ok();
             }
         }
 
-        let post = parse_from_urlencoded(&body);
+        let post = parse_form_urlencoded(&body);
         let todo = post.get("action").cloned().unwrap_or("".to_string());
 
         if todo == "save"{
@@ -156,7 +156,7 @@ fn main(){
 
     print!("Cache-Control: no-cache\r\n");
     print!("Content-Type: text/html\r\n");
-    print!("Set-Cookie: {}={}; Path=/; SameSite=Lax\r\n\r\n", cookie, sid);
+    print!("Set-Cookie: {}={}; Path=/; SameSite=Lax\r\n\r\n", cookie, session_id);
 
     // html code
     println!("<!DOCTYPE html>");
