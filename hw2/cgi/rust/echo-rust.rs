@@ -18,12 +18,12 @@ fn decode_url(s: &str) -> String{
                 let h2 = bytes[i+2] as char;
                 let hex_format = format!("{}{}", h1, h2);
                 if let Ok(value) = u8::from_str_radix(&hex_format, 16){
-                    out.push(value as chat);
+                    result.push(value as char);
                 }
                 i += 3;
             }
             _ => {
-                out.push(bytes[i] as char);
+                result.push(bytes[i] as char);
                 i += 1;
             }
         }
