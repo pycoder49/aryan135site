@@ -18,3 +18,15 @@ Server IP: 164.92.88.99
 
 ## My Domain
 https://aryan135.site
+
+
+## Aditional Notes:
+My echo.html is hyperlinked into my index.html
+
+GET: form-urlencoded takes you to the echo-{language} page
+
+POST: form-urlencoded takes you to the echo-{language} page, and application/json shows inline response
+
+PUT: Both encoded techniques display inline responses
+
+DELETE: Both ecnoded techniques display incline responses
