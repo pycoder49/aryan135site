@@ -70,7 +70,7 @@ static string read_stdin_body(){
         length = stoi(content_length);
     }
     catch(...){
-        len = 0;
+        length = 0;
     }
     string body;
 
