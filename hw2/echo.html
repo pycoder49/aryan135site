@@ -40,17 +40,17 @@
 
                     fetch(endpoint, {
                         method,
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(jsonObject),
                         credentials: "include",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(jsonObject)
                     }).then(response => response.text()).then(data => document.getElementById("output").textContent = data);
                 }
                 else{   // for application/x-www-form-urlencoded
                     fetch(endpoint, {
                         method,
-                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                        body: new URLSearchParams(formData),
                         credentials: "include",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams(formData)
                     }).then(response => response.text()).then(data => document.getElementById("output").textContent = data);
                 }
             });
