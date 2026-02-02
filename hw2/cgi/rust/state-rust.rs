@@ -3,9 +3,9 @@ use std::env;
 use std::fs;
 use std::io::{self, Read};
 
-let cookie: &str = "CGISESSID";
-let session_dir: &str = "/tmp/cse135-rust-sessions";
-let base_url: &str = "/hw2/cgi/rust/state-rust.cgi";
+const cookie: &str = "CGISESSID";
+const session_dir: &str = "/tmp/cse135-rust-sessions";
+const base_url: &str = "/hw2/cgi/rust/state-rust.cgi";
 
 fn html_escape(s: &str) -> String{
     s.replace('&', "&amp;")
