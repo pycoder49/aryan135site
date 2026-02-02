@@ -88,13 +88,13 @@ static map<string, string> parse_cookie(const string& cookie_header){
 
     stringstream ss(s);
     string part;
-    while(getline(ss, part, ";")){
+    while(getline(ss, part, ';')){
         while(!part.empty() && part.front() == ' '){
             part.erase(part.begin());
         }
         auto y = part.find("=");
         if(y != string::npos){
-            c[part.substr(0, y)] = part.substr(y + 1);
+            cookies[part.substr(0, y)] = part.substr(y + 1);
         }
     }
     return cookies;
