@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-extern string cookie = "CGISESSID";
-extern string session_dir = "/tmp/cse135-sessions-cpp/";
-extern string base_url = "/hw2/cgi/cpp/state-cpp.cgi";
+const string cookie = "CGISESSID";
+const string session_dir = "/tmp/cse135-sessions-cpp/";
+const string base_url = "/hw2/cgi/cpp/state-cpp.cgi";
 
 static string html_escape(const string& data){
     string result;
@@ -74,7 +74,7 @@ static string read_stdin_body(){
     }
     string body;
 
-    body.resize(max(0, lenght))
+    body.resize(max(0, length))
     if(length > 0){
         cin.read(&body[0], length);
     }
@@ -83,7 +83,7 @@ static string read_stdin_body(){
 }
 
 static map<string, string> parse_cookie(const string& cookie_header){
-    maps<string, string> cookies;
+    map<string, string> cookies;
     string s = cookie_header;
 
     stringstream ss(s);
