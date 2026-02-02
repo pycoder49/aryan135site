@@ -30,7 +30,7 @@ int main(){
     for(char **env = environ; *env; env++){
         string line(*env);
         auto position = line.find('=');
-        string key = (poisition == string::npos) ? line : line.substr(0, position);
+        string key = (position == string::npos) ? line : line.substr(0, position);
         string value = (position == string::npos) ? "" : line.substr(position + 1);
         cout << "<tr><td>" << html_escape(key) << "</td><td>" << html_escape(value) << "</td></tr>";
     }
