@@ -65,8 +65,8 @@ static map<string, string> parse_json_object(const string &body){
     auto begin = sregex_iterator(body.begin(), body.end(), regx);
     auto end = sregex_iterator();
     
-    for(; it != end; ++it){
-        params[(*it)[1].str()] = (*it)[2].str();
+    for(; begin != end; ++begin){
+        params[(*begin)[1].str()] = (*begin)[2].str();
     }
     return params;
 }
@@ -78,7 +78,7 @@ static string env_get(const char* key, const string& default_value){
 
 static string read_stdin_body(){
     string body_length = env_get("CONTENT_LENGTH", "0");
-    int length = 0
+    int length = 0;
 
     try{
         length = stoi(body_length);
