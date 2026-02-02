@@ -1,7 +1,7 @@
 use std::env;
 use std::time::{SystemTime, UNIX_EPOCH};
 
-fn json_escape(s: &str){
+fn json_escape(s: &str) -> String{
     let escaped = s
         .replace('\\', "\\\\")
         .replace('"', "\\\"")
