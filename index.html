@@ -8,22 +8,35 @@
   <link rel="icon" type="image/x-icon" href="search.ico">
 
   <style>
-    #top-half{
-      display:flex;
-      justify-content: space-between;
-      padding-bottom: 100px;
-    }
-    #main-title, #team-bar {
-      width: 30%;
-      padding: 10px;
-      box-sizing: border-box;
+    #top-half { 
+      display:flex; 
+      justify-content: space-between; 
+      padding-bottom: 100px; 
     }
 
-    #homework-bottom-half > h4,ul,p{
-      background-color: rgb(219, 219, 219);
+    #main-title, #team-bar { 
+      width: 30%; 
+      padding: 10px; 
+      box-sizing: border-box; 
     }
-    #team-bar {
-      background-color: rgb(219, 219, 219);
+
+    #team-bar { 
+      background-color: rgb(219, 219, 219); 
+    }
+
+    .hw2-panel {
+      background: rgb(219, 219, 219);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      width: fit-content;
+    }
+
+    .hw2-bottom {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
     }
   </style>
 </head>
@@ -51,9 +64,13 @@
     </ul>
 
     <h2>Homework 2</h2>
-    <ul>
-      <li><a href="hw2/echo.html" target="_blank">Echo your requests here!</a></li>
-      <li>
+
+    <div class="hw2-panel">
+      <div class="hw2-top">
+        <a href="hw2/echo.html" target="_blank">Echo your requests here!</a>
+      </div>
+
+      <div class="hw2-bottom">
         <details>
           <summary><b>C++ Files</b></summary>
           <ul>
@@ -64,8 +81,23 @@
             <li><a href="/hw2/cgi/cpp/state-cpp.cgi" target="_blank">State Page</a></li>
           </ul>
         </details>
-      </li>
-      <li>
+
+        <details>
+          <summary><b>Pearl Files</b></summary>
+          <ul>
+            <li><a href="/hw2/cgi/perl/perl-hello-html-world.pl" target="_blank">Hello HTML</a></li>
+            <li><a href="/hw2/cgi/perl/perl-hello-json-world.pl" target="_blank">Hello JSON</a></li>
+            <li><a href="/hw2/cgi/perl/perl-env.pl" target="_blank">Environment Variables</a></li>
+            <li><a href="/hw2/cgi/perl/perl-env-pm.pl" target="_blank">Environment Variables (pm)</a></li>
+            <li><a href="/hw2/cgi/perl/perl-general-echo.pl" target="_blank">Echo (General)</a></li>
+            <li><a href="/hw2/cgi/perl/perl-get-echo.pl" target="_blank">Echo (GET)</a></li>
+            <li><a href="/hw2/cgi/perl/perl-post-echo.pl" target="_blank">Echo (POST)</a></li>
+            <li><a href="/hw2/cgi/perl/perl-sessions-1.pl" target="_blank">Sessions 1</a></li>
+            <li><a href="/hw2/cgi/perl/perl-sessions-2.pl" target="_blank">Sessions 2</a></li>
+            <li><a href="/hw2/cgi/perl/perl-destroy-session.pl" target="_blank">Destroy Session</a></li>
+          </ul>
+        </details>
+
         <details>
           <summary><b>Python Files</b></summary>
           <ul>
@@ -76,8 +108,7 @@
             <li><a href="/hw2/cgi/python/state-python.py" target="_blank">State Page</a></li>
           </ul>
         </details>
-      </li>
-      <li>
+
         <details>
           <summary><b>Rust Files</b></summary>
           <ul>
@@ -88,8 +119,8 @@
             <li><a href="/hw2/cgi/rust/state-rust.cgi" target="_blank">State Page</a></li>
           </ul>
         </details>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <h2>Analytics</h2>
     <p>TBD</p>
