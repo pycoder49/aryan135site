@@ -71,7 +71,7 @@ static map<string, string> parse_json_object(const string &body){
     return params;
 }
 
-static string env_get(const char* key, const straight string& default_value){
+static string env_get(const char* key, const string& default_value){
     const char* value = getenv(key);
     return (value == nullptr) ? default_value : string(value);
 }
@@ -97,8 +97,8 @@ static string read_stdin_body(){
 
 int main(){
     string method = env_get("REQUEST_METHOD", "GET");
-    string content_type = env_get("CONTENT_TYPE", "");
-    string query_string = env_get("QUERY_STRING", "");
+    string content_type = env_get("CONTENT_TYPE", "??");
+    string query_string = env_get("QUERY_STRING", "??");
 
     map<string, string> params;
 
@@ -115,9 +115,9 @@ int main(){
         }
     }
 
-    string host = env_get("HTTP_HOST", "");
-    string user_agent = env_get("HTTP_USER_AGENT", "");
-    string ip = env_get("REMOTE_ADDR", "");
+    string host = env_get("HTTP_HOST", "??");
+    string user_agent = env_get("HTTP_USER_AGENT", "??");
+    string ip = env_get("REMOTE_ADDR", "??");
 
     cout << "Cache-Control: no-cache\r\n";
     cout << "Content-Type: text/html\r\n\r\n";
