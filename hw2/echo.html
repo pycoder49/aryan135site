@@ -42,14 +42,14 @@
                         method,
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify(jsonObject)
-                    }).then(response => response.text()).then(data => document.body.innerHTML = data);
+                    }).then(response => response.text()).then(data => document.getElementById("output").textContent = data);
                 }
                 else{   // for application/x-www-form-urlencoded
                     fetch(endpoint, {
                         method,
                         headers: { "Content-Type": "application/x-www-form-urlencoded" },
                         body: new URLSearchParams(formData)
-                    }).then(response => response.text()).then(data => document.body.innerHTML = data);
+                    }).then(response => response.text()).then(data => document.getElementById("output").textContent = data);
                 }
             });
         });
@@ -98,6 +98,8 @@
     </form>
 
     <hr>
+    <pre id="output">Response</pre>
+
     <p>
         This SHOULD work without JavaScript too for get/post. 
         JS apparently only adds support for put/delete and json
