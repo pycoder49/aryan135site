@@ -92,7 +92,7 @@ static map<string, string> parse_cookie(const string& cookie_header){
         while(!part.empty() && part.front() == ' '){
             part.erase(part.begin());
         }
-        auto y == part.find("=");
+        auto y = part.find("=");
         if(y != string::npos){
             c[part.substr(0, y)] = part.substr(y + 1);
         }
@@ -105,7 +105,7 @@ static string random_session_id(){
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<int> dist(0, 15);
-    strind id;
+    string id;
     for(int i = 0; i < 32; i++){
         id += hex_format[dist(gen)];
     }
