@@ -74,7 +74,7 @@ static string read_stdin_body(){
     }
     string body;
 
-    body.resize(max(0, length))
+    body.resize(max(0, length));
     if(length > 0){
         cin.read(&body[0], length);
     }
