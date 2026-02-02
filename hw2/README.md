@@ -23,10 +23,9 @@ https://aryan135.site
 ## Aditional Notes:
 My echo.html is hyperlinked into my index.html
 
-GET: form-urlencoded takes you to the echo-{language} page
+1) **GET:** form-urlencoded takes you to the echo-{language} page
+2) **POST:** form-urlencoded takes you to the echo-{language} page, and application/json shows inline response
+3) **PUT:** Both encoded techniques display inline responses
+4) **DELETE:** Both ecnoded techniques display incline responses
 
-POST: form-urlencoded takes you to the echo-{language} page, and application/json shows inline response
-
-PUT: Both encoded techniques display inline responses
-
-DELETE: Both ecnoded techniques display incline responses
+The inline responses on echo.html are formatted on **Firefox**. They seem to be unformatted and in a single line on **Chrome**
