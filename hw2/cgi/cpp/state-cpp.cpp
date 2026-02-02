@@ -64,7 +64,7 @@ static map<string, string> parse_form_encoded(const string& body){
 
 static string read_stdin_body(){
     string content_length = env_get("CONTENT_LENGTH", "0");
-    int len = 0;
+    int length = 0;
 
     try{
         length = stoi(content_length);
