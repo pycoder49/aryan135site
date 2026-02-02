@@ -118,7 +118,7 @@ if page == "form":
     print("    <input id='value' name='value' type='text' />")
     print("    <input type='hidden' name='action' value='save' />")
     print("    <button type='submit'>Save</button></form>")
-    print("<p>After saving, you’ll be taken to the View Page to see saved values.</p>")
+    print("<p>After saving, you will be taken to the View Page to see saved values.</p>")
 elif page == "view":
     print("<h2>Saved values</h2>")
     if session["items"]:
