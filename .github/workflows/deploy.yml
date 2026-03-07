@@ -31,13 +31,6 @@ jobs:
             ls -la "$APP_DIR"
             cd "$APP_DIR"
             git pull origin main
-            rsync -a --delete ./ /var/www/aryan135.site/public_html/ --exclude .git
-            sudo find /var/www/aryan135.site/public_html/hw2/cgi -type f \( -name "*.pl" -o -name "*.py" -o -name "*.cgi" \) -exec chmod 755 {} \;
-            cd /var/www/aryan135.site/public_html/hw2/cgi/rust
-            sudo chmod +x build.sh
-            sudo bash build.sh
-            cd /var/www/aryan135.site/public_html/hw2/cgi/cpp
-            sudo chmod +x build.sh
-            sudo bash build.sh
+            rsync -a --delete ./ /var/www/aryan135.site/public_html/ --exclude .git            
 
           EOF
