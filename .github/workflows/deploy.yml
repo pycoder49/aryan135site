@@ -31,7 +31,11 @@ jobs:
             ls -la "$APP_DIR"
             cd "$APP_DIR"
             git pull origin main
-            rsync -a --delete ./ /var/www/aryan135.site/public_html/ --exclude .git            
+            rsync -a --delete \
+              --exclude .git \
+              --exclude 'hw2/cgi/cpp/*.cgi' \
+              --exclude 'hw2/cgi/rust/*.cgi' \
+              ./ /var/www/aryan135.site/public_html/            
 
             sudo find /var/www/aryan135.site/public_html/hw2/cgi -type f \( -name "*.pl" -o -name "*.py" -o -name "*.cgi" \) -exec chmod 755 {} \;
           EOF
