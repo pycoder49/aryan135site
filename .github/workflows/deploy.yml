@@ -38,4 +38,12 @@ jobs:
               ./ /var/www/aryan135.site/public_html/            
 
             sudo find /var/www/aryan135.site/public_html/hw2/cgi -type f \( -name "*.pl" -o -name "*.py" -o -name "*.cgi" \) -exec chmod 755 {} \;
+            sudo chown -R www-data:www-data /var/www/reporting.aryan135.site/data
+            sudo chmod 775 /var/www/reporting.aryan135.site/data
+            sudo chmod 664 /var/www/reporting.aryan135.site/data/saved_reports.json
+            
+            sudo chown www-data:www-data /var/www/reporting.aryan135.site/data/users.json
+            sudo chmod 664 /var/www/reporting.aryan135.site/data/users.json
+            sudo chown www-data:www-data /var/www/reporting.aryan135.site/data
+            sudo chmod 775 /var/www/reporting.aryan135.site/data
           EOF
